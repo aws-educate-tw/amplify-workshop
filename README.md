@@ -1,4 +1,5 @@
-![](https://hackmd.io/_uploads/rJQC80jMp.png)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/b3a6556a-e1bf-48d2-b838-465a0da8cf7e)
+
 
 ## 工作坊成品
 
@@ -50,15 +51,15 @@ amplify configure
   - [ ] 在 AWS console 中輸入 IAM，創建一個 user 及 secret key
 
     1. 輸入 user name（通常會叫做`amplify-dev`，但可以輸入你喜歡的就好）> Next
-       ![](https://hackmd.io/_uploads/BJ1BtRifT.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/2ba0abd6-ee5a-4866-bb40-33c0bda01a3b)
     2. permission options 選擇**Attach policies directly**
        permission policies 選擇**AdministratorAccess-Amplify**
-       ![](https://hackmd.io/_uploads/B1Cdfl2z6.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/7993e591-d8ca-4ae1-bed3-574825a192c3)
     3. 確認好就可以按 Create User 囉 ↖(^ω^)↗
        > 是不是發現 AccessKey 還是空的！我們來建立一下！～
     4. 回到 users list 點擊剛剛建立的 user > 點擊 Security credentials > 點擊**Create access keys** > 下一步 > 選擇**CLI**
     5. 接著，你就有`accessKeyId` 和 `secretAccessKey`啦～複製他們～
-       ![](https://hackmd.io/_uploads/HyGUUx3Ga.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/e01488af-2e53-4523-bad1-a11e128dea49)
 
   - [ ] 複製 IAM 中的 `accessKeyId` 和 `secretAccessKey`輸入進 CLI 中
 
