@@ -1,4 +1,4 @@
-![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/b3a6556a-e1bf-48d2-b838-465a0da8cf7e)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/8774b2de-b0f5-40a7-9e92-36292556ca88)![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/b3a6556a-e1bf-48d2-b838-465a0da8cf7e)
 
 
 ## 工作坊成品
@@ -58,8 +58,11 @@ amplify configure
     3. 確認好就可以按 Create User 囉 ↖(^ω^)↗
        > 是不是發現 AccessKey 還是空的！我們來建立一下！～
     4. 回到 users list 點擊剛剛建立的 user > 點擊 Security credentials > 點擊**Create access keys** > 下一步 > 選擇**CLI**
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/34baf2ec-61ab-4e12-a5c1-815b81c5428f)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/5b1a7371-0d72-4a5e-b5f1-cf52c0e57ad9)
     5. 接著，你就有`accessKeyId` 和 `secretAccessKey`啦～複製他們～
        ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/e01488af-2e53-4523-bad1-a11e128dea49)
+       
 
   - [ ] 複製 IAM 中的 `accessKeyId` 和 `secretAccessKey`輸入進 CLI 中
 
