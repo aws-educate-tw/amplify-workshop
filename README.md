@@ -43,7 +43,7 @@ amplify configure
 ```
 
 - 2-1：瀏覽器會跳出「AWS 登入視窗」
-- 2-2：登入後，回到 CLI，他會請你選擇 Region 跟你的 AWS IAM User 資料
+- 2-2：[登入後，回到 CLI，他會請你選擇 Region 跟你的 AWS IAM User 資料](https://docs.amplify.aws/cli/start/install/#configure-the-amplify-cli)
 
   > AWS IAM (Identity and Access Management) 用於管理在 AWS 中的 users 和權限
 
