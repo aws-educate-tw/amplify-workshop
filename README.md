@@ -8,7 +8,7 @@
 # 工作坊開始
 
 首先，開啟 AWS IDE 服務 - [Cloud9](https://aws.amazon.com/tw/cloud9/)
-![](https://hackmd.io/_uploads/BkEAe93Ma.png)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/491e7277-83cd-4d00-92aa-b9a17c001616)
 
 ## 確認環境
 
@@ -49,23 +49,24 @@ amplify configure
   - [ ] 在 AWS console 中輸入 IAM，創建一個 user 及 secret key
 
     1. 輸入 user name（通常會叫做`amplify-dev`，但可以輸入你喜歡的就好）> Next
-       ![](https://hackmd.io/_uploads/BkGgzchM6.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/28146fb2-7cc1-4d45-b682-9867190c6c0a)
 
     2. permission options 選擇**Attach policies directly**
        permission policies 選擇**AdministratorAccess-Amplify**
-       ![](https://hackmd.io/_uploads/BkwGM5hGp.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/ca9d7a20-3220-4ee4-830e-4f6b318f30ee)
+
     3. 確認好就可以按 Create User 囉 ↖(^ω^)↗
-       ![](https://hackmd.io/_uploads/r14Vf53z6.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/391af4cf-89cc-4dcb-8ef4-6bab4fa7aa60)
        建立成功！
-       ![](https://hackmd.io/_uploads/ryNwGcnGT.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/9d3fee1d-26c9-4648-a14b-1aa866667083)
 
     4. 回到 users list 點擊剛剛建立的 user > 點擊**建立存取金鑰** > 選擇**CLI** > 下一步 > 建立存取金鑰
-       ![](https://hackmd.io/_uploads/r1b3M5nGa.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/27ab62fd-4346-42b2-a153-acce61f7461b)
 
-       ![](https://hackmd.io/_uploads/SJrb79hfT.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/53c57ae3-3f4e-4b9f-84f7-4d8055a571b4)
 
     5. 接著，你就有`accessKeyId` 和 `secretAccessKey`啦～複製他們～
-       ![](https://hackmd.io/_uploads/BkZUXq3G6.png)
+       ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/eb9bb3b6-2503-4a7f-ac0e-9ebf3ce0e8f2)
 
   - [ ] 複製 IAM 中的 `accessKeyId` 和 `secretAccessKey`輸入進 CLI 中
 
@@ -78,8 +79,8 @@ amplify configure
 
     Successfully set up the new user.
     ```
+    ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/fe6b6210-2b83-44e2-9e9b-d84df05d7669)
 
-    ![](https://hackmd.io/_uploads/ByzjmcnzT.png)
 
 ## 建立前端
 
@@ -129,13 +130,13 @@ webpack compiled successfully
 ```
 
 這時候不像平常我們在本機直接打開就好，因為在 cloud9，所以請你點擊上方列表的 Preview > **Preview Running Application**
-![](https://hackmd.io/_uploads/BySh8n2Mp.png)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/3d911a44-6f48-4052-a800-b39ed526d8aa)
 
 > 平時在你本機上 React 通常預設 port 會是 3000，所以你只要打開 http://localhost:3000 就的以看到畫面了
 
 **就可以看到剛剛用好的前端畫面了！**
 **但這個時候我們只是蓋好一間餐廳，但還沒招募廚師跟服務員，因此現在畫面上的工具都不能動。**
-![](https://hackmd.io/_uploads/Bk6yPh3G6.png)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/001e3a98-0c74-4835-977c-7016424ccdb0)
 
 ## 建立後端
 
@@ -198,7 +199,7 @@ webpack compiled successfully
       ```
 
   **2. 新增新的 GraphQL API，API 可以將應用程式的資料同步到雲端上**
-  ![](https://hackmd.io/_uploads/rJQC80jMp.png)
+  ![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/88cf7ccc-3adf-41a7-9a71-e91e564bfd23)
 
 - 這邊直接全部選預設值就好（一路按 Enter）
 
