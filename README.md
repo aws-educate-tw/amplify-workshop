@@ -1,4 +1,4 @@
-![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/8774b2de-b0f5-40a7-9e92-36292556ca88)![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/b3a6556a-e1bf-48d2-b838-465a0da8cf7e)
+![image](https://github.com/hooroobaby/amplify-workshop/assets/73383643/b3a6556a-e1bf-48d2-b838-465a0da8cf7e)
 
 
 ## 工作坊成品
