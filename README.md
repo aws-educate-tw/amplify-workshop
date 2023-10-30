@@ -1,5 +1,3 @@
-![](https://hackmd.io/_uploads/rJQC80jMp.png)
-
 ## 工作坊成品
 
 1. FrontEnd - React
@@ -35,8 +33,7 @@ $ source ~/.bash_profile
 **1. 安裝最新的 Amplify CLI**
 
 ```bash
-# npm install -g @aws-amplify/cli`
-yarn global add @aws-amplify/cli
+npm install -g @aws-amplify/cli
 ```
 
 <!-- - 若失敗，可以加上Sudo 等於Windows中的系統管理員身份 -->
@@ -210,6 +207,7 @@ webpack compiled successfully
       ```
 
   **2. 新增新的 GraphQL API，API 可以將應用程式的資料同步到雲端上**
+  ![](https://hackmd.io/_uploads/rJQC80jMp.png)
 
 - 這邊直接全部選預設值就好（一路按 Enter）
 
