@@ -19,15 +19,6 @@
 - [git](https://git-scm.com/) v2.14.1 or later
   - `git --version` 有出現版本即可
 
-### 安裝
-
-```
-$ sudo curl -sL https://dl.yarnpkg.com/rpm/yarn.repo  -o /etc/yum.repos.d/yarn.repo
-$ sudo yum install yarn
-$ echo 'export PATH="$PATH:$(yarn global bin)"' >> ~/.bash_profile
-$ source ~/.bash_profile
-```
-
 ## 前置 Amplify 環境
 
 **1. 安裝最新的 Amplify CLI**
