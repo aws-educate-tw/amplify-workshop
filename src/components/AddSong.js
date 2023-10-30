@@ -14,14 +14,13 @@ const AddSong = ({ onUpload, onCancel }) => {
     try {
       console.log("songData => ", songData);
       const { title, description } = songData;
+      onUpload();
 
-      // S3
-      const keyMusic = await Storage.put(`${uuid()}.mp3`, musicData, {
-        contentType: "audio/mp3",
-      });
-      const keyIMG = await Storage.put(`${uuid()}.jpeg`, IMGData, {
-        contentType: "image/jpeg",
-      });
+      // 同時上傳圖片跟歌到S3
+      const [keyMusic, keyIMG] = await Promise.all([
+        Storage.put(`${uuid()}.mp3`, musicData, { contentType: "audio/mp3" }),
+        Storage.put(`${uuid()}.jpeg`, IMGData, { contentType: "image/jpeg" }),
+      ]);
 
       // DynamoDB
       const createSongData = {

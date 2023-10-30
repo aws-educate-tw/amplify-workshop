@@ -17,6 +17,7 @@ function App() {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Educate
         </h2>
       </div>
+      {/* Main.js */}
       <Main />
     </div>
   );
