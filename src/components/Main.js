@@ -17,7 +17,7 @@ const Main = () => {
 
   // when everytime App rerender
   useEffect(() => {
-    // fetchSongs();
+    fetchSongs();
   }, []);
 
   // ========================= 內有兩隻API =========================
