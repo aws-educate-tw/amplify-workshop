@@ -32,7 +32,7 @@ const AddSong = ({ onUpload, onCancel }) => {
       };
       console.log("createSongData => ", createSongData);
 
-      AppSync會幫助我們連接至DynamoDB並創建歌曲;
+      //AppSync會幫助我們連接至DynamoDB並創建歌曲;
       await API.graphql(
         graphqlOperation(createSong, { input: createSongData })
       );
