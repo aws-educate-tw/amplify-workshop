@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
-// import { API, graphqlOperation, Storage } from "aws-amplify";
-// import { createSong } from "../graphql/mutations";
+import { createSong } from "../graphql/mutations";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 
 // 這隻負責做新增音樂的功能
 const AddSong = ({ onUpload, onCancel }) => {
@@ -32,10 +32,10 @@ const AddSong = ({ onUpload, onCancel }) => {
       };
       console.log("createSongData => ", createSongData);
 
-      // AppSync會幫助我們連接至DynamoDB並創建歌曲
-      // await API.graphql(
-      //   graphqlOperation(createSong, { input: createSongData })
-      // );
+      //AppSync會幫助我們連接至DynamoDB並創建歌曲;
+      await API.graphql(
+        graphqlOperation(createSong, { input: createSongData })
+      );
 
       onUpload();
     } catch (error) {
