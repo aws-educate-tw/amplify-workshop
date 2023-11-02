@@ -5,10 +5,12 @@
 3. GraphQL API 串接前後端資料
 4. AWS Amplify Deploy & Hosting
 
+[本日實作範例網站: ](https://staging.d32o98xu01u6og.amplifyapp.com/)
+
 
 # 工作坊開始
 首先，開啟AWS IDE服務 - [Cloud9](https://aws.amazon.com/tw/cloud9/)
-![](https://hackmd.io/_uploads/BkEAe93Ma.png)
+![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/75425984-ed21-4c05-b37e-5093e249d5b0)
 
 
 ## 確認環境
@@ -42,23 +44,30 @@ amplify configure
     - [ ] 在AWS console中輸入IAM，創建一個user及secret key
     
         1. 輸入user name（通常會叫做`amplify-dev`，但可以輸入你喜歡的就好）> Next
-        ![](https://hackmd.io/_uploads/BkGgzchM6.png)
+           ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/08a2e6f9-a0a2-4066-a573-9a781e7ed978)
+
 
         2. permission options選擇**Attach policies directly**
             permission policies選擇**AdministratorAccess-Amplify**
-            ![](https://hackmd.io/_uploads/BkwGM5hGp.png)
+            ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/5b4c00d9-da03-4e17-be52-f4f7cd8b96e5)
+
         3. 確認好就可以按Create User囉 ↖(^ω^)↗
-            ![](https://hackmd.io/_uploads/r14Vf53z6.png)
+            ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/57019f2a-57d5-4d0d-8f75-ac042da7ffdd)
+
             建立成功！
-            ![](https://hackmd.io/_uploads/ryNwGcnGT.png)
+            ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/d090431a-1e8f-44c4-aa46-a3434c8f993d)
+
 
         4. 回到users list點擊剛剛建立的user >  點擊**建立存取金鑰** > 選擇**CLI** > 下一步 > 建立存取金鑰
-            ![](https://hackmd.io/_uploads/r1b3M5nGa.png)
+           ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/96294613-5598-4ba6-b98c-fb1d2738ec6a)
+
             
-            ![](https://hackmd.io/_uploads/SJrb79hfT.png)
+           ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/2481df5f-9a79-49bf-9e69-3922771fb5bb)
+
 
         6. 接著，你就有`accessKeyId` 和 `secretAccessKey`啦～複製他們～
-        ![](https://hackmd.io/_uploads/BkZUXq3G6.png)
+        ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/f9095b7b-8d72-4ba0-ae17-da76343873db)
+
 
 
     - [ ] 複製IAM中的 `accessKeyId` 和 `secretAccessKey`輸入進CLI中
@@ -71,14 +80,15 @@ amplify configure
 
         Successfully set up the new user.
         ```
-        ![](https://hackmd.io/_uploads/ByzjmcnzT.png)
+        ![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/671cadc4-46a7-4cea-bcff-1063447c39a7)
+
 
 
 ## 建立前端
 
 **1. 將前端架構下載到電腦中**
 ```shell=
-git clone https://github.com/hooroobaby/amplify-workshop.git
+git clone https://github.com/aws-educate-tw/amplify-workshop.git
 ```
 **2. 下載前端會需要用到的套件**
 > 套件就是「別人寫好的工具」，這個專案中下載的套件包含 Amplify 官方提供的可以使用 javascript 來操作 amplify 的工具
@@ -87,9 +97,6 @@ git clone https://github.com/hooroobaby/amplify-workshop.git
 ```shell=
 npm install
 ```
-**如果出現 Error 的話**: 
-- Mac 可以用 `sudo npm install` 再試一次（會要求輸入你電腦的密碼）
-- Windows 可以用系統管理員身份執行 PowerShell
 
 他會下載約一分鐘，下載完成後，前端就準備完成了 🎉
 
@@ -99,14 +106,16 @@ npm install
 npm start
 ```
 這時候不像平常我們在本機直接打開就好，因為在cloud9，所以請你點擊上方列表的Preview > **Preview Running Application**
-![](https://hackmd.io/_uploads/BySh8n2Mp.png)
+![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/df0fc759-c536-4d6a-a5aa-871c8ee04fd3)
+
 
 
 > 平時在你本機上React通常預設port會是3000，所以你只要打開 http://localhost:3000就的以看到畫面了
 
 **就可以看到剛剛用好的前端畫面了！**
 **但這個時候我們只是蓋好一間餐廳，但還沒招募廚師跟服務員，因此現在畫面上的工具都不能動。**
-![](https://hackmd.io/_uploads/Bk6yPh3G6.png)
+![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/4dfc64b8-0bf0-4f70-8e41-fbe5254b4147)
+
 
 
 ## 建立後端
@@ -180,7 +189,7 @@ amplify add hosting
 ```
 amplify publish
 ```
-
+若之後再有更改，都輸入此指令即可
 
 ## Cleanup
 如果你想將這個專案 AWS Amplify 在 AWS 上使用的資源以及在 local 建立的檔案刪除的話，可以輸入
