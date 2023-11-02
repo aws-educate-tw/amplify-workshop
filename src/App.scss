@@ -20,7 +20,7 @@ $backgroud-color: #040404;
   background: linear-gradient(to bottom, #333fff, #000467);
   text-align: center;
   height: calc(100vh - 20px);
-  width: 100vw;
+  width: 100%;
 }
 
 .header {
@@ -168,7 +168,7 @@ $backgroud-color: #040404;
   position: absolute;
   color: white;
   right: 80px;
-    top: 5.5%;
+  top: 5.5%;
 }
 
 .divider {
