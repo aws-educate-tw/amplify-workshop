@@ -106,9 +106,11 @@ $backgroud-color: #040404;
   background-color: rgba(170, 181, 224, 0.63);
   // display: flex;
   width: 26%;
+  min-width: 420px;
   left: 36.5%;
   top: 30%;
-  height: 300px;
+  min-height: 300px;
+  height: 30%;
   padding: 10px 0px 30px;
   color: white;
 
@@ -164,9 +166,9 @@ $backgroud-color: #040404;
 
 .addIcon {
   position: absolute;
-  top: 6%;
   color: white;
-  right: 20%;
+  right: 80px;
+    top: 5.5%;
 }
 
 .divider {
