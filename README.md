@@ -31,6 +31,8 @@ npm install -g @aws-amplify/cli
 - -g 表示global => 在全域都可以使用
 
 **2. 如果你想要在本地機器使用Amplify CLI，你就需要連線到AWS帳戶**
+<img width="473" alt="image" src="https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/9c7e260f-9cd2-4692-9370-8864be36f0da">
+
 > 我們今天都是用Event Engine，所以還是要大家先配置 ( ; _ ; )/~~~
 > 如果回去想自己玩玩看，且你的電腦有有憑證的AWS配置檔案，才可以跳過這個步驟喔～
 ```bash
@@ -90,7 +92,16 @@ amplify configure
 ```shell=
 git clone https://github.com/aws-educate-tw/amplify-workshop.git
 ```
-**2. 下載前端會需要用到的套件**
+**2. 點擊左下角，開啟origin/studio分支
+- 2-1 先確認在studio分支
+- 2-2 至專案根目錄下
+```
+cd amplify-workshop
+```
+- 2-3 請確認至少有途中這些檔案或資料夾
+<img width="310" alt="image" src="https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/ecd1e66f-aff7-4b75-ad85-5d25d9f1b928">
+
+** 3. 下載前端會需要用到的套件**
 > 套件就是「別人寫好的工具」，這個專案中下載的套件包含 Amplify 官方提供的可以使用 javascript 來操作 amplify 的工具
 
 確認自己有在資料夾下，若沒有則輸入`cd amplify-demo`，cd 到你目前的資料夾！！！
@@ -137,12 +148,33 @@ npm start
 **1. 初始化專案**
 有了前端跟Amplify的環境後，我們來初始化Amplify專案，並建置API
 > API(Application Programming Interface)
+- 1-1 打開AWS console，輸入Ａmplify
+- 1-2 建立Ａmplify App，App Name輸入合適的自訂名稱
+- 1-3 Confirm deployment
 
-- 1-1 首先，先在Amplify Studio建立
-- 2-2 待跑完後，複製他給的指令，並貼在上面。
- 
-**2. 
-- /amplify/backend/api/.../**schema.graphql**的內容為：
+**2. 開啟Amplify Studio**
+- 2-1 進入後，點擊Launch Studio
+
+** 3. 創建Data Model 及連結API**
+- 3-1 在Amplify Studio中，點擊create data model
+- 3-2 點擊Add Model 新增model
+- 3-3 命名item為'Song'
+- 3-4 attributes依序輸入title, description, filePath, imgPath，並且每個都選取為必須（required）
+- 3-5 點擊GraphQL API setting，將conflict resolution & offline capabilities設定為'Enabled'，並且下方Strategy選擇'Add Merge'
+- 3-6 回到上一步，並選擇Save and Deploy
+- 3-7 待跑完後，複製他給的指令。
+  例如：<img width="272" alt="image" src="https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/782c0a4c-3391-4192-87af-fdeb6c7d6d4b">
+- 3-8 移至專案資料夾
+  ```
+  cd amplify-workshop
+  ```
+- 3-9 貼上剛剛複製的指令，Enter
+- 3-10 點擊下方連結，並Open
+- 3-11 接著，如圖
+  <img width="606" alt="image" src="https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/23b21eda-b66c-4b39-bf3b-5f5430dd8a3e">
+
+
+這時， /amplify/backend/api/.../**schema.graphql**的內容已自動改為：
 
     ```
     type Song @model {
@@ -183,6 +215,7 @@ guration
 ✔ What kind of access do you want for Guest users? · create/update, read
 ✔ Do you want to add a Lambda Trigger for your S3 Bucket? (y/N) · no
 ```
+
 **4. 在App.js的地方，取消以下程式碼的註解**
 ```
 // import { Amplify } from "aws-amplify";
@@ -211,6 +244,9 @@ amplify-workshop
 └── package.json
 ```
 
+## 可以看看剛剛的網頁啦～🤩
+開啟剛剛的頁面，並**重新整理**
+（在public資料夾下面有圖片跟音樂檔，可以）
 
 ## 部署與託管
 在專案的根目錄下，執行
