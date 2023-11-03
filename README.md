@@ -5,7 +5,7 @@
 3. GraphQL API 串接前後端資料
 4. AWS Amplify Deploy & Hosting
 
-[本日實作範例網站: ](https://staging.d32o98xu01u6og.amplifyapp.com/)
+[本日實作範例網站](https://staging.d32o98xu01u6og.amplifyapp.com/)
 
 
 # 工作坊開始
@@ -139,12 +139,9 @@ npm start
 > API(Application Programming Interface)
 
 - 1-1 首先，先在Amplify Studio建立
+- 2-2 待跑完後，複製他給的指令，並貼在上面。
  
-**2. 新增新的GraphQL API，API可以將應用程式的資料同步到雲端上**
-   ```
-   amplify update api
-   ```
-    
+**2. 
 - /amplify/backend/api/.../**schema.graphql**的內容為：
 
     ```
@@ -186,7 +183,35 @@ guration
 ✔ What kind of access do you want for Guest users? · create/update, read
 ✔ Do you want to add a Lambda Trigger for your S3 Bucket? (y/N) · no
 ```
-   
+**4. 在App.js的地方，取消以下程式碼的註解**
+```
+// import { Amplify } from "aws-amplify";
+// import awsconfig from "./aws-exports";
+
+// Amplify.configure(awsconfig);
+```
+Windows -> Ctrl+/
+Mac -> Command+/
+
+**5. 此時，你的檔案路徑至少要有：**
+```
+amplify-workshop
+├── amplify/
+├── build/
+├── node_modules/
+├── public/
+├── src/
+│   ├── components/
+│   ├── graphql/
+│   ├── models/
+│   ├── App.js
+│   ├── App.scss
+│   └── aws-exports.js
+├── package-lock.json
+└── package.json
+```
+
+
 ## 部署與託管
 在專案的根目錄下，執行
 ```
