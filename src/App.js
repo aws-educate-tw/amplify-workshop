@@ -1,10 +1,10 @@
 import "./App.scss";
 import Main from "./components/Main";
 import { FaAws } from "react-icons/fa";
-import { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
+// import { Amplify } from "aws-amplify";
+// import awsconfig from "./aws-exports";
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 function App() {
   // 畫面
