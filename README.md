@@ -160,7 +160,7 @@ npm start
 - 3-2 點擊Add Model 新增model
 - 3-3 命名item為'Song'
 - 3-4 attributes依序輸入title, description, filePath, imgPath，並且每個都選取為必須（required）
-- 3-5 點擊GraphQL API setting，將conflict resolution & offline capabilities設定為'Enabled'，並且下方Strategy選擇'Add Merge'
+- 3-5 點擊GraphQL API setting，將conflict resolution & offline capabilities設定為'Enabled'，並且下方Strategy選擇'Auto Merge'
 - 3-6 回到上一步，並選擇Save and Deploy
 - 3-7 待跑完後，複製他給的指令。
   例如：<img width="272" alt="image" src="https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/782c0a4c-3391-4192-87af-fdeb6c7d6d4b">
@@ -271,3 +271,39 @@ amplify publish
 ```shell
 amplify delete
 ```
+
+
+## 常見問題
+嗨嗨～因為後面講得比較快，文件有一些地方沒有很完整的引導大家，導致有些人有錯誤，雖然遺憾已造成，還是希望可以針對一些我在還留存的案例中看得到的問題進行解說，大家之後也都歡迎用自己的AWS account建立（我建立這個目前只花0.1美金）。下方附上解題過程，若之後同學之後有想自己建立遇到相同問題，可以對照一下
+
+1. 如果你的data model命名與Song不相同，你可能有兩種選擇，第一個是去更改graphql/*的檔案中Song的名稱都為SONG，第二我們可以用Studio改為Song
+    > 同學錯誤的內容，以下：
+    > "message": "Validation error of type UnknownType: Unknown type CreateSongInput"
+    "message": "Validation error of type UnknownType: Unknown type ModelSongConditionInput"
+    "message": "Validation error of type FieldUndefined: Field 'createSong' in type 'Mutation' is undefined @ 'createSong'"
+
+    發現同學在這邊都讀不到Song這個東西，S3正常、但DynamoDB中沒有東西，進入data model後看到同學寫SONG，對電腦的來說，大小寫意義不同喔！
+![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/97ce5c8d-4d90-481c-b008-87daa96b16b1)
+
+
+2. 
+
+> POST https://cognito-identity.us-east-1.amazonaws.com/ 400 (Bad Request)
+AddSong.js:42 createSong Failed =>  InvalidAccessKeyId: The AWS Access Key Id you provided does not exist in our records.
+    PUT https://demochenchenapp4ab59a3fd587429ba013e30b24d338d4125815-staging.s3.us-east-1.amazonaws.com/public/2b4d08dc-5e21-4665-96f8-a2be82397ca8.mp3 403 (Forbidden)
+
+- 這邊發現同學在cognito(Authentication)是400，並且有提到AccessKey  Id you provided does not exist in our records.，因此先重新在IAM（大家創建的user）取得新的accesskey
+- 不管是jpeg或mp3都顯示403，可能是對Storage的任何操作都沒有權限的關係
+![image](https://github.com/aws-educate-tw/amplify-workshop/assets/73383643/7927a4ba-6b31-4bd2-9c35-a96c0a320c8d)
+
+
+3. 
+> [WARN] 15:36.754 GraphQLAPI - ensure credentials error No Cognito Identity pool provided for unauthenticated access
+> error on fetching songs =>  Error: No credentials
+
+因為我沒有這種的同學實際範例可以參考修改，因此幫同學找了參考資料：
+https://github.com/aws-amplify/amplify-js/issues/10825
+可能會發生這種問題的地方為S3，再我們輸入`amplify add storage`前，可以先檢查你的console.log( Auth.configure() )，再繼續我們Readme中的操作。
+或是你在Studio檢查發現Storage有資料，DynamoDB有資料，甚至Auth也開了，但還是沒辦法，只好試試看remove所有dependencies，在重新install@@
+
+**如果有人可以模擬出當時的情況，歡迎mail或私訊我~~~~~~(~( ; _ ; )/~**
